@@ -6,8 +6,6 @@ import sqlite3 as db
 # data_frame = pd.read_csv("Spacex.csv")
 # data_frame.head()
 
-# "Date,Time (UTC),Booster_Version,Launch_Site,Payload,PAYLOAD_MASS__KG_,Orbit,Customer,Mission_Outcome,Landing _Outcome"
-
 # Create connection
 connection = db.connect('Space.db')
 
@@ -28,3 +26,12 @@ records_beginning_with_cca
 # TASK 3
 total_mass = pd.read_sql("SELECT SUM(PAYLOAD_MASS__KG_) FROM SPACEXTBL", connection)
 total_mass
+
+# TASK 4
+avg_mass = pd.read_sql("SELECT AVG(PAYLOAD_MASS__KG_) FROM SPACEXTBL", connection)
+avg_mass
+
+# TASK 5
+first_successful_landing = pd.read_sql("SELECT MIN(DATE) FROM SPACEXTBL WHERE Mission_Outcome = 'Success'", connection)
+first_successful_landing
+
