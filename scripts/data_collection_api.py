@@ -8,3 +8,12 @@ response_into_json = response.json()
 
 # json into data frame 
 data_frame = pd.json_normalize(response_into_json)
+
+# Get the head of the dataframe
+data = data_frame.head(5)
+
+# Create a data from launch_dict
+revised_df = pd.DataFrame.from_dict(launch_dict, orient='index', dtype=None).dropna()
+
+# Show the head of the dataframe
+revised_df.describe()
