@@ -35,3 +35,6 @@ total_outcomes = pd.read_sql("SELECT COUNT(Mission_Outcome) FROM SPACEXTBL", con
 
 # TASK 8
 booster_versions_max = pd.read_sql("SELECT Booster_Version FROM SPACEXTBL WHERE PAYLOAD_MASS__KG_=(SELECT MAX(PAYLOAD_MASS__KG_) FROM SPACEXTBL)", connection)
+
+# TASK 9 
+failed_outcomes_drone = pd.read_sql("SELECT DATE, MISSION_OUTCOME, BOOSTER_VERSION, LAUNCH_SITE FROM SPACEXTBL WHERE DATE LIKE '%2015%'", connection)
