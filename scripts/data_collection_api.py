@@ -22,3 +22,5 @@ revised_df.describe()
 data_falcon9 = revised_df['BoosterVersion' != 'Falcon 1']
 
 # TASK 3
+# Calculate the mean value of PayloadMass column
+# mean_value = data_falcon9['PayloadMass'].mean() THIS WILL THROW AN ERROR
