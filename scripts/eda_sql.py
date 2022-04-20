@@ -38,3 +38,6 @@ booster_versions_max = pd.read_sql("SELECT Booster_Version FROM SPACEXTBL WHERE 
 
 # TASK 9 
 failed_outcomes_drone = pd.read_sql("SELECT DATE, MISSION_OUTCOME, BOOSTER_VERSION, LAUNCH_SITE FROM SPACEXTBL WHERE DATE LIKE '%2015%'", connection)
+
+# TASK 10 
+landing_outcomes = pd.read_sql("SELECT * FROM SPACEXTBL WHERE DATE BETWEEN '2010-06-04' AND '2017-03-20' ORDER BY DATE DESC", connection)
