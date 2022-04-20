@@ -17,3 +17,6 @@ revised_df = pd.DataFrame.from_dict(launch_dict, orient='index', dtype=None).dro
 
 # Show the head of the dataframe
 revised_df.describe()
+
+# Filter to only display Falcon 9 launches 
+data_falcon9 = revised_df['BoosterVersion' != 'Falcon 1']
