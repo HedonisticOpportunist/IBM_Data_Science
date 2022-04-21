@@ -1,2 +1,2 @@
 # data_science_capstone
-Applied Data Science Capstone IBM
+Applied Data Science Capstone IBM + assorted files. 
