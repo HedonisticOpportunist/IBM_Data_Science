@@ -25,3 +25,10 @@ sns.catplot(x="PayloadMass", y="Orbit", hue='Class' , data=df,aspect=2)
 plt.xlabel("Payload mass", fontsize=15)
 plt.ylabel("Orbit", fontsize=15)
 plt.show()
+
+# TASK 7
+features = df[['FlightNumber', 'PayloadMass', 'Orbit', 'LaunchSite', 'Flights', 'GridFins', 'Reused', 'Legs', 'LandingPad', 'Block', 'ReusedCount', 'Serial']]
+features_one_hot = pd.get_dummies(features, columns=["Orbit","LaunchSite","LandingPad","Serial"])
+
+# TASK 8 
+features_one_hot=features_one_hot.astype("float64")
