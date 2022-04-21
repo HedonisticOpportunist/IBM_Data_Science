@@ -18,3 +18,10 @@ sns.catplot(x="FlightNumber", y="Orbit", hue='Class' , data=df, aspect=2)
 plt.xlabel("Flight Number", fontsize=15)
 plt.ylabel("Orbit", fontsize=15)
 plt.show()
+
+# TASK 5
+# Plot a scatter point chart with x axis to be Payload and y axis to be the Orbit, and hue to be the class value
+sns.catplot(x="PayloadMass", y="Orbit", hue='Class' , data=df,aspect=2)
+plt.xlabel("Payload mass", fontsize=15)
+plt.ylabel("Orbit", fontsize=15)
+plt.show()
