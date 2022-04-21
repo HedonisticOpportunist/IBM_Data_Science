@@ -12,6 +12,9 @@ plt.xlabel("Payload Mass kg", fontsize=20)
 plt.ylabel("Launch Site", fontsize=20)
 plt.show()
 
+# TASK 3
+
+
 # TASK 4
 # Plot a scatter point chart with x axis to be FlightNumber and y axis to be the Orbit, and hue to be the class value
 sns.catplot(x="FlightNumber", y="Orbit", hue='Class' , data=df, aspect=2)
@@ -25,6 +28,12 @@ sns.catplot(x="PayloadMass", y="Orbit", hue='Class' , data=df,aspect=2)
 plt.xlabel("Payload mass", fontsize=15)
 plt.ylabel("Orbit", fontsize=15)
 plt.show()
+
+# TASK 6
+len(year)
+
+# Plot a line chart with x axis to be the extracted year and y axis to be the success rate
+# sns.relplot(x=year,y='Class', data=df) DOES NOT WORK 
 
 # TASK 7
 features = df[['FlightNumber', 'PayloadMass', 'Orbit', 'LaunchSite', 'Flights', 'GridFins', 'Reused', 'Legs', 'LandingPad', 'Block', 'ReusedCount', 'Serial']]
