@@ -13,6 +13,14 @@ plt.ylabel("Launch Site", fontsize=20)
 plt.show()
 
 # TASK 3
+# HINT use groupby method on Orbit column and get the mean of Class column
+bar_chart = df.groupby("Orbit")["Class"].mean()
+
+sns.set_theme(style="whitegrid")
+# sns.catplot(x= bar_chart.index, y = bar_chart.values, data=df, kind='bar', aspect=3) COMMENTED OUT DUE TO ERROR BEING THROWN 
+plt.xlabel("Orbit", fontsize=15)
+plt.ylabel("Success rate of each orbit", fontsize=15)
+plt.show()
 
 
 # TASK 4
