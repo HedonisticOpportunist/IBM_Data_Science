@@ -29,3 +29,7 @@ app.layout = html.Div(children=[html.H1('Airline Dashboard', style={'textAlign':
                                 dcc.Graph(figure=fig),
                                                
                     ])
+
+# Run the application                   
+if __name__ == '__main__':
+    app.run_server()
