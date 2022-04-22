@@ -12,15 +12,19 @@ data_frame = pd.json_normalize(response_into_json)
 data = data_frame.head(5)
 
 # Create a data from launch_dict
-revised_df = pd.DataFrame.from_dict(launch_dict, orient='index', dtype=None).dropna()
+launch_df = pd.DataFrame.from_dict(launch_dict)
 
 # Show the head of the dataframe
-revised_df.describe()
+launch_df.describe()
 
 # TASK 2
 # Filter to only display Falcon 9 launches 
-data_falcon9 = revised_df['BoosterVersion' != 'Falcon 1']
+data_falcon9 = launch_df.loc[launch_df['BoosterVersion'] != 'Falcon 1']
 
 # TASK 3
 # Calculate the mean value of PayloadMass column
-# mean_value = data_falcon9['PayloadMass'].mean() THIS WILL THROW AN ERROR
+# Calculate the mean value of PayloadMass column
+mean_value = data_falcon9['PayloadMass'].mean() 
+
+data_falcon9['PayloadMass'].fillna(mean_value, inplace=True)
+data_falcon9.isnull().sum()
