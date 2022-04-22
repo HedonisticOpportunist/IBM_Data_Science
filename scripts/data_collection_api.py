@@ -6,7 +6,7 @@ static_json_url='https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cl
 response_into_json = response.json()
 
 # json into data frame 
-data_frame = pd.json_normalize(response_into_json)
+data_frame = pd.json_normalize(response.json())
 
 # Get the head of the dataframe
 data = data_frame.head(5)
@@ -19,10 +19,9 @@ launch_df.describe()
 
 # TASK 2
 # Filter to only display Falcon 9 launches 
-data_falcon9 = launch_df.loc[launch_df['BoosterVersion'] != 'Falcon 1']
+data_falcon9 = launch_df[launch_df['BoosterVersion']!='Falcon 1']
 
 # TASK 3
-# Calculate the mean value of PayloadMass column
 # Calculate the mean value of PayloadMass column
 mean_value = data_falcon9['PayloadMass'].mean() 
 
